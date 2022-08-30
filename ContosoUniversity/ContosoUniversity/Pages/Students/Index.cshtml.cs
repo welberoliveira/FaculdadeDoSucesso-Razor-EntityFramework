@@ -1,17 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using ContosoUniversity.Data;
+﻿using ContosoUniversity.Data;
 using ContosoUniversity.Models;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace ContosoUniversity.Pages.Students
 {
     public class IndexModel : PageModel
     {
         private readonly SchoolContext _context;
-        public IndexModel(SchoolContext context)
+        private readonly IConfiguration Configuration;
+
+        public IndexModel(SchoolContext context, IConfiguration configuration)
         {
             _context = context;
+            Configuration = configuration;
         }
 
         public string NameSort { get; set; }
@@ -20,14 +26,23 @@ namespace ContosoUniversity.Pages.Students
         public string CurrentFilter { get; set; }
         public string CurrentSort { get; set; }
 
-        public IList<Student> Students { get; set; }
+        public PaginatedList<Student> Students { get; set; }
 
-        public async Task OnGetAsync(string sortOrder, string searchString)
+        public async Task OnGetAsync(string sortOrder,
+            string currentFilter, string searchString, int? pageIndex)
         {
             // using System;
             NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
             FirstSort = sortOrder == "First" ? "first_desc" : "First";
+            if (searchString != null)
+            {
+                pageIndex = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
 
             CurrentFilter = searchString;
 
@@ -61,7 +76,11 @@ namespace ContosoUniversity.Pages.Students
                     break;
             }
 
-            Students = await studentsIQ.AsNoTracking().ToListAsync();
+            var pageSize = Configuration.GetValue("PageSize", 4);
+            Students = await PaginatedList<Student>.CreateAsync
+                (
+                    studentsIQ.AsNoTracking(), pageIndex ?? 1, pageSize
+                );
         }
     }
 }
