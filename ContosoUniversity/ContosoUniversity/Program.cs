@@ -30,7 +30,9 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
 
     var context = services.GetRequiredService<SchoolContext>();
-    context.Database.EnsureCreated();
+    
+    //usado para criar um banco inicial (teste/protótipo)
+    //context.Database.EnsureCreated();
     DbInitializer.Initialize(context);
 }
 
