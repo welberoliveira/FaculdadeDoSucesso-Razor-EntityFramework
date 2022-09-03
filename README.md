@@ -1,7 +1,6 @@
 # Razor com Entity Framework em ASP.NET Core 
 
-Referências:
-https://docs.microsoft.com/en-us/aspnet/core/data/ef-rp/concurrency?view=aspnetcore-6.0&tabs=visual-studio
+Faculdade do Sucesso é um sistema criado usando Entity Framework Core em ASP.NET Core Razor Pages Web App e que tem como referência instruções e modelos do site da Microsoft. Foi utilizado o Sistema Gerenciador de Bancos de Dados Sql Server. Ambos: aplicação e banco de dados estão hospedados na Azure.
 
 Publicado na Azure:
 https://contosouniversity20220830201003.azurewebsites.net
@@ -35,3 +34,6 @@ Diagrama de Entidade-Relacionamentos
 
 [TO DO]
 Incluir telas do sistema
+
+Referências:
+https://docs.microsoft.com/en-us/aspnet/core/data/ef-rp/concurrency?view=aspnetcore-6.0&tabs=visual-studio
