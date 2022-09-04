@@ -2,13 +2,13 @@
 @model ContosoUniversity.Pages.Courses.DetailsModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes da Disciplina";
 }
 
-<h1>Details</h1>
+<h1>Detalhes</h1>
 
 <div>
-    <h4>Course</h4>
+    <h4>Disciplina</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -32,6 +32,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Course?.CourseID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Index" class="btn btn-info">Voltar</a>
+    <a asp-page="./Edit" class="btn btn-primary" asp-route-id="@Model.Course?.CourseID">Edit</a>
 </div>

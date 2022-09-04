@@ -2,14 +2,13 @@
 @model ContosoUniversity.Pages.Courses.DeleteModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Excluir Disciplina";
 }
 
-<h2>Delete</h2>
+<h2>Excluir Disciplina</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Deseja realmente excluir essa Disciplina? (Essa operação não pode ser desfeita)</h3>
 <div>
-    <h4>Course</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -39,8 +38,8 @@
     </dl>
 
     <form method="post">
+        <a asp-page="./Index" class="btn btn-info">Voltar</a>
         <input type="hidden" asp-for="Course.CourseID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
+        <input type="submit" value="Excluir" class="btn btn-danger" />
     </form>
 </div>

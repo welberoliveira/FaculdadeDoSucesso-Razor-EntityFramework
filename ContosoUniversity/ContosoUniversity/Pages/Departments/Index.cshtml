@@ -2,13 +2,13 @@
 @model ContosoUniversity.Pages.Departments.IndexModel
 
 @{
-    ViewData["Title"] = "Departments";
+    ViewData["Title"] = "Cursos";
 }
 
-<h2>Departments</h2>
+<h2>Cursos</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-primary">Cadastrar novo Curso</a>
 </p>
 <table class="table">
     <thead>
@@ -51,9 +51,9 @@
                     @Utility.GetLastChars(item.ConcurrencyToken)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.DepartmentID">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.DepartmentID">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.DepartmentID">Delete</a>
+                    <a asp-page="./Edit" asp-route-id="@item.DepartmentID">Alterar</a> |
+                    <a asp-page="./Details" asp-route-id="@item.DepartmentID">Detalhes</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.DepartmentID">Excluir</a>
                 </td>
             </tr>
         }

@@ -2,16 +2,15 @@
 @model ContosoUniversity.Pages.Departments.DeleteModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Excluir Curso";
 }
 
-<h1>Delete</h1>
+<h1>Excluir Curso</h1>
 
 <p class="text-danger">@Model.ConcurrencyErrorMessage</p>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Você tem certeza que deseja excluir esse Curso? (Essa operação não pode ser desfeita)</h3>
 <div>
-    <h4>Department</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -49,7 +48,7 @@
     <form method="post">
         <input type="hidden" asp-for="Department.DepartmentID" />
         <input type="hidden" asp-for="Department.ConcurrencyToken" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
+        <a asp-page="./Index" class="btn btn-info">Voltar</a>
+        <input type="submit" value="Excluir" class="btn btn-danger" />
     </form>
 </div>

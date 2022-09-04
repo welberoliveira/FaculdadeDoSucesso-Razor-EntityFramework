@@ -2,13 +2,13 @@
 @model ContosoUniversity.Pages.Courses.IndexModel
 
 @{
-    ViewData["Title"] = "Courses";
+    ViewData["Title"] = "Disciplinas";
 }
 
-<h1>Courses</h1>
+<h1>Disciplinas</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-primary">Cadastrar nova Disciplina</a>
 </p>
 <table class="table">
     <thead>
@@ -45,9 +45,9 @@
                 @Html.DisplayFor(modelItem => item.Department.Name)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.CourseID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.CourseID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.CourseID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.CourseID">Alterar</a> |
+                <a asp-page="./Details" asp-route-id="@item.CourseID">Detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CourseID">Excluir</a>
             </td>
         </tr>
 }
