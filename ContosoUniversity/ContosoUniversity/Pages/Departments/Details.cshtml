@@ -12,31 +12,25 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Department.Name)
+            Descrição
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-10" title="Token: @Html.DisplayFor(model => model.Department.ConcurrencyToken)">
             @Html.DisplayFor(model => model.Department.Name)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Department.Budget)
+            Orçamento disponível
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Department.Budget)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Department.StartDate)
+            Data de início
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Department.StartDate)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Department.ConcurrencyToken)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Department.ConcurrencyToken)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Department.Administrator)
+            Coordenador
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Department.Administrator.FirstMidName)

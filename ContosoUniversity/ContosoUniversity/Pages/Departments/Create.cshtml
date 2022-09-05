@@ -13,35 +13,33 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Department.Name" class="control-label"></label>
+                Descrição
                 <input asp-for="Department.Name" class="form-control" />
                 <span asp-validation-for="Department.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Department.Budget" class="control-label"></label>
+                Orçamento disponível
                 <input asp-for="Department.Budget" class="form-control" />
                 <span asp-validation-for="Department.Budget" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Department.StartDate" class="control-label"></label>
+                Data de início
                 <input asp-for="Department.StartDate" class="form-control" />
                 <span asp-validation-for="Department.StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Department.InstructorID" class="control-label"></label>
+                Coordenador
                 <select asp-for="Department.InstructorID" class ="form-control" asp-items="ViewBag.InstructorID"></select>
             </div>
             <div class="form-group">
+                <a class="btn btn-info" asp-page="Index">Voltar</a>
                 <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a class="btn btn-info" asp-page="Index">Voltar</a>
-</div>
-
-@section Scripts {
+@section Scripts 
+{
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
