@@ -2,10 +2,6 @@
 using ContosoUniversity.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ContosoUniversity.Pages.Students
 {
@@ -72,7 +68,7 @@ namespace ContosoUniversity.Pages.Students
                     studentsIQ = studentsIQ.OrderByDescending(s => s.EnrollmentDate);
                     break;
                 default:
-                    studentsIQ = studentsIQ.OrderBy(s => s.LastName);
+                    studentsIQ = studentsIQ.OrderByDescending(s => s.ID);
                     break;
             }
 

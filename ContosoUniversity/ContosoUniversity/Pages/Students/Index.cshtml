@@ -25,13 +25,19 @@
     <thead>
         <tr>
             <th>
-                Nome
+                <a asp-page="./Index" asp-route-sortOrder="@Model.FirstSort">
+                    Nome
+                </a>
             </th>
             <th>
-                Sobrenome
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    Sobrenome
+                </a>
             </th>
             <th>
-                Data de Matrícula
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                    Data de Matrícula
+                </a>
             </th>
             <th></th>
         </tr>
