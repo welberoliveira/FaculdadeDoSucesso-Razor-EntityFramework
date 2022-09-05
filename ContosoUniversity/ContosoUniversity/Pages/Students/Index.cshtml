@@ -15,8 +15,8 @@
         <p>
             Buscar por nome:
             <input type="text" name="SearchString" value="@Model.CurrentFilter" />
-            <input type="submit" value="Buscar" class="btn btn-primary" /> |
-            <a asp-page="./Index">Ver lista completa</a>
+            <input type="submit" value="Buscar" class="btn btn-primary" />
+            <a class="btn btn-outline-primary" asp-page="./Index">Ver lista completa</a>
         </p>
     </div>
 </form>
@@ -25,22 +25,13 @@
     <thead>
         <tr>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
-                   asp-route-currentFilter="@Model.CurrentFilter">
-                    @Html.DisplayNameFor(model => model.Students[0].LastName)
-                </a>
+                Nome
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.FirstSort"
-                   asp-route-currentFilter="@Model.CurrentFilter">
-                    @Html.DisplayNameFor(model => model.Students[0].FirstMidName)
-                </a>
+                Sobrenome
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort"
-                   asp-route-currentFilter="@Model.CurrentFilter">
-                    @Html.DisplayNameFor(model => model.Students[0].EnrollmentDate)
-                </a>
+                Data de Matrícula
             </th>
             <th></th>
         </tr>
@@ -50,18 +41,18 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
+                    @Html.DisplayFor(modelItem => item.FirstMidName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FirstMidName)
+                    @Html.DisplayFor(modelItem => item.LastName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.EnrollmentDate)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ID">Alterar</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ID">Detalhes</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID">Excluir</a>
+                    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.ID">Alterar</a> 
+                    <a class="btn btn-info" asp-page="./Details" asp-route-id="@item.ID">Detalhes</a> 
+                    <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.ID">Excluir</a>
                 </td>
             </tr>
         }

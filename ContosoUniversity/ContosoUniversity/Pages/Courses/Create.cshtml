@@ -3,30 +3,29 @@
 @{
     ViewData["Title"] = "Cadastrar Disciplina";
 }
-<h2>Cadastrar</h2>
-<h4>Disciplina</h4>
+<h2>Cadastrar Disciplina</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Course.CourseID" class="control-label"></label>
+                Código
                 <input asp-for="Course.CourseID" class="form-control" />
                 <span asp-validation-for="Course.CourseID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Course.Title" class="control-label"></label>
+                Descrição
                 <input asp-for="Course.Title" class="form-control" />
                 <span asp-validation-for="Course.Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Course.Credits" class="control-label"></label>
+                Créditos
                 <input asp-for="Course.Credits" class="form-control" />
                 <span asp-validation-for="Course.Credits" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Course.Department" class="control-label"></label>
+                Curso
                 <select asp-for="Course.DepartmentID" class="form-control"
                         asp-items="@Model.DepartmentNameSL">
                     <option value="">-- Select Department --</option>

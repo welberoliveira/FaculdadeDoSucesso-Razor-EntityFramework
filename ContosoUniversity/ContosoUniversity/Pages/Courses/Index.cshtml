@@ -14,16 +14,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Courses[0].CourseID)
+                Código
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Courses[0].Title)
+                Descrição
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Courses[0].Credits)
+                Créditos
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Courses[0].Department)
+                Curso
             </th>
             <th></th>
         </tr>
@@ -45,9 +45,9 @@
                 @Html.DisplayFor(modelItem => item.Department.Name)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.CourseID">Alterar</a> |
-                <a asp-page="./Details" asp-route-id="@item.CourseID">Detalhes</a> |
-                <a asp-page="./Delete" asp-route-id="@item.CourseID">Excluir</a>
+                <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.CourseID">Alterar</a> 
+                <a class="btn btn-info" asp-page="./Details" asp-route-id="@item.CourseID">Detalhes</a>
+                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.CourseID">Excluir</a>
             </td>
         </tr>
 }

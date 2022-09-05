@@ -14,19 +14,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Department[0].Name)
+                Descrição
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Department[0].Budget)
+                Orçamento Disponível
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Department[0].StartDate)
+                Data de Início
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Department[0].Administrator)
-            </th>
-            <th>
-                Token
+                Coordenador
             </th>
             <th></th>
         </tr>
@@ -35,7 +32,7 @@
         @foreach (var item in Model.Department)
         {
             <tr>
-                <td>
+                <td alt="Token: @Utility.GetLastChars(item.ConcurrencyToken)">
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
@@ -48,12 +45,9 @@
                     @Html.DisplayFor(modelItem => item.Administrator.FullName)
                 </td>
                 <td>
-                    @Utility.GetLastChars(item.ConcurrencyToken)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.DepartmentID">Alterar</a> |
-                    <a asp-page="./Details" asp-route-id="@item.DepartmentID">Detalhes</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.DepartmentID">Excluir</a>
+                    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.DepartmentID">Alterar</a>
+                    <a class="btn btn-info" asp-page="./Details" asp-route-id="@item.DepartmentID">Detalhes</a>
+                    <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.DepartmentID">Excluir</a>
                 </td>
             </tr>
         }

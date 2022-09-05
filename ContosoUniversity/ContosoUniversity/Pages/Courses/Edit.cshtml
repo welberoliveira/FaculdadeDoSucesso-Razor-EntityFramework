@@ -5,31 +5,29 @@
     ViewData["Title"] = "Alteração de Disciplina";
 }
 
-<h2>Alterar</h2>
+<h2>Alterar Disciplina</h2>
 
-<h4>Disciplina</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Course.CourseID" />
-            <div class="form-group">
-                <label asp-for="Course.CourseID" class="control-label"></label>
-                <div>@Html.DisplayFor(model => model.Course.CourseID)</div>
+            <div class="form-group my-2">
+                <div>Código: @Html.DisplayFor(model => model.Course.CourseID)</div>
             </div>
             <div class="form-group">
-                <label asp-for="Course.Title" class="control-label"></label>
+                Descrição
                 <input asp-for="Course.Title" class="form-control" />
                 <span asp-validation-for="Course.Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Course.Credits" class="control-label"></label>
+                Créditos
                 <input asp-for="Course.Credits" class="form-control" />
                 <span asp-validation-for="Course.Credits" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Course.Department" class="control-label"></label>
+                Curso
                 <select asp-for="Course.DepartmentID" class="form-control"
                         asp-items="@Model.DepartmentNameSL"></select>
                 <span asp-validation-for="Course.DepartmentID" class="text-danger"></span>
