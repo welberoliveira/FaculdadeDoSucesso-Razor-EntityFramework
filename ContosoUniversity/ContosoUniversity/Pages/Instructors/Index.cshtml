@@ -2,22 +2,22 @@
 @model ContosoUniversity.Pages.Instructors.IndexModel
 
 @{
-    ViewData["Title"] = "Instructors";
+    ViewData["Title"] = "Professores";
 }
 
-<h2>Instructors</h2>
+<h2>Professores</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="btn btn-primary" asp-page="Create">Cadastrar novo professor</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>Last Name</th>
-            <th>First Name</th>
-            <th>Hire Date</th>
-            <th>Office</th>
-            <th>Courses</th>
+            <th>Sobrenome</th>
+            <th>Nome</th>
+            <th>Admissão</th>
+            <th>Sala</th>
+            <th>Disciplinas</th>
             <th></th>
         </tr>
     </thead>
@@ -54,10 +54,10 @@
                     }
                 </td>
                 <td>
-                    <a asp-page="./Index" asp-route-id="@item.ID">Select</a> |
-                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                    <a asp-page="./Index" asp-route-id="@item.ID">Disciplinas Vinculadas</a> |
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Alterar</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Detalhes</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Excluir</a>
                 </td>
             </tr>
         }
@@ -66,7 +66,7 @@
 
 @if (Model.InstructorData.Courses != null)
 {
-    <h3>Courses Taught by Selected Instructor</h3>
+    <h3>Disciplinas vinculadas ao Professor</h3>
     <table class="table">
         <tr>
             <th></th>
@@ -84,7 +84,7 @@
             }
             <tr class="@selectedRow">
                 <td>
-                    <a asp-page="./Index" asp-route-courseID="@item.CourseID">Select</a>
+                    <a asp-page="./Index" asp-route-courseID="@item.CourseID">Alunos matriculados</a>
                 </td>
                 <td>
                     @item.CourseID
@@ -104,12 +104,12 @@
 @if (Model.InstructorData.Enrollments != null)
 {
     <h3>
-        Students Enrolled in Selected Course
+        Alunos matriculados na disciplina
     </h3>
     <table class="table">
         <tr>
-            <th>Name</th>
-            <th>Grade</th>
+            <th>Nome</th>
+            <th>Nota</th>
         </tr>
         @foreach (var item in Model.InstructorData.Enrollments)
         {
