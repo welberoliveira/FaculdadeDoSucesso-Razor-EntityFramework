@@ -14,7 +14,6 @@
     <thead>
         <tr>
             <th>Nome</th>
-            <th>Sobrenome</th>
             <th>Admissão</th>
             <th>Sala</th>
             <th></th>
@@ -30,10 +29,7 @@
             }
             <tr class="@selectedRow">
                 <td>
-                    @Html.DisplayFor(modelItem => item.FirstMidName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
+                    @Html.DisplayFor(modelItem => item.FullName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.HireDate)

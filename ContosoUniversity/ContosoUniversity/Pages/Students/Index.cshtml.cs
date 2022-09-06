@@ -28,7 +28,6 @@ namespace ContosoUniversity.Pages.Students
             string currentFilter, string searchString, int? pageIndex)
         {
             // using System;
-            NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
             FirstSort = sortOrder == "First" ? "first_desc" : "First";
             if (searchString != null)
@@ -52,14 +51,11 @@ namespace ContosoUniversity.Pages.Students
 
             switch (sortOrder)
             {
-                case "name_desc":
-                    studentsIQ = studentsIQ.OrderByDescending(s => s.LastName);
-                    break;
                 case "First":
-                    studentsIQ = studentsIQ.OrderBy(s => s.FirstMidName);
+                    studentsIQ = studentsIQ.OrderBy(s => s.FullName);
                     break;
                 case "first_desc":
-                    studentsIQ = studentsIQ.OrderByDescending(s => s.FirstMidName);
+                    studentsIQ = studentsIQ.OrderByDescending(s => s.FullName);
                     break;
                 case "Date":
                     studentsIQ = studentsIQ.OrderBy(s => s.EnrollmentDate);

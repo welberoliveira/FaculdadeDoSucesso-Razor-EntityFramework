@@ -30,11 +30,6 @@
                 </a>
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
-                    Sobrenome
-                </a>
-            </th>
-            <th>
                 <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
                     Data de Matrícula
                 </a>
@@ -47,10 +42,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FirstMidName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
+                    @Html.DisplayFor(modelItem => item.FullName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.EnrollmentDate)
