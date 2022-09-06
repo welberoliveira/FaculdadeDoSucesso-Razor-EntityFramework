@@ -28,11 +28,11 @@
                 Curso
                 <select asp-for="Course.DepartmentID" class="form-control"
                         asp-items="@Model.DepartmentNameSL">
-                    <option value="">-- Select Department --</option>
+                    <option value="">-- Selecioe o Curso --</option>
                 </select>
                 <span asp-validation-for="Course.DepartmentID" class="text-danger" />
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <a asp-page="./Index" class="btn btn-info">Voltar</a>
                 <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
