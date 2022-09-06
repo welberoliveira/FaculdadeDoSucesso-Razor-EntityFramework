@@ -16,7 +16,7 @@ namespace ContosoUniversity.Pages.Departments
 
         public IActionResult OnGet()
         {
-        ViewData["InstructorID"] = new SelectList(_context.Instructors, "ID", "FirstMidName");
+        ViewData["InstructorID"] = new SelectList(_context.Instructors, "ID", "FullName");
             return Page();
         }
 
