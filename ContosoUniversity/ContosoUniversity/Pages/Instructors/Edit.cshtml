@@ -6,7 +6,7 @@
 <h2>Alterar Professor</h2>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-8">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Instructor.ID" />
@@ -40,23 +40,16 @@
                     <table>
                         <tr>
                             @{
-                                int cnt = 0;
-
                                 foreach (var course in Model.AssignedCourseDataList)
                                 {
-                                    if (cnt++ % 3 == 0)
-                                    {
-                                        @:</tr><tr>
-                                    }
-                                    @:<td>
+                                    @:<tr><td>
                                         <input type="checkbox"
                                                name="selectedCourses"
                                                value="@course.CourseID"
                                                @(Html.Raw(course.Assigned ? "checked=\"checked\"" : "")) />
-                                               @course.CourseID @:  @course.Title
-                                    @:</td>
+                                               <span>@Model.GetDepartmentName(course.CourseID) - (@course.CourseID) - @course.Title</span>
+                                    @:</td></tr>
                                 }
-                                @:</tr>
                             }
                     </table>
                 </div>

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -109,6 +110,15 @@ namespace ContosoUniversity.Pages.Instructors
                     }
                 }
             }
+        }
+
+        public String GetDepartmentName(int id)
+        {
+             var departmentName = from c in _context.Courses
+                                 join d in _context.Departments on c.Department equals d
+                                 where c.CourseID == id
+                                 select d.Name;
+            return departmentName.First();
         }
     }
 }
