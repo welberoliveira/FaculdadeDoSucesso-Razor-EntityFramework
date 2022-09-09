@@ -10,22 +10,22 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                Código
+                @Html.DisplayNameFor(model => model.Course.CourseID)
                 <input asp-for="Course.CourseID" class="form-control" />
                 <span asp-validation-for="Course.CourseID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Descrição
+                @Html.DisplayNameFor(model => model.Course.Title)
                 <input asp-for="Course.Title" class="form-control" />
                 <span asp-validation-for="Course.Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Créditos
+                @Html.DisplayNameFor(model => model.Course.Credits)
                 <input asp-for="Course.Credits" class="form-control" />
                 <span asp-validation-for="Course.Credits" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Curso
+                @Html.DisplayNameFor(model => model.Course.Department)
                 <select asp-for="Course.DepartmentID" class="form-control"
                         asp-items="@Model.DepartmentNameSL">
                     <option value="">-- Selecioe o Curso --</option>

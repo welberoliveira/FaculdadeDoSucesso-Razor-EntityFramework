@@ -20,6 +20,7 @@ namespace ContosoUniversity.Pages.Courses
         }
 
         public IList<Course> Courses { get;set; } = default!;
+        public Course Course { get; set; }
 
         public async Task OnGetAsync()
         {
