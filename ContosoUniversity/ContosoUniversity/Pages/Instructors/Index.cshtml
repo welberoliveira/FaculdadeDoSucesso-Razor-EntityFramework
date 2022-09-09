@@ -13,9 +13,15 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Nome</th>
-            <th>Admissão</th>
-            <th>Sala</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instructor.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instructor.HireDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instructor.OfficeAssignment)
+            </th>
             <th></th>
         </tr>
     </thead>

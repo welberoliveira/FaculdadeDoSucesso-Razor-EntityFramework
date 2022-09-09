@@ -52,10 +52,10 @@ namespace ContosoUniversity.Pages.Students
             switch (sortOrder)
             {
                 case "First":
-                    studentsIQ = studentsIQ.OrderBy(s => s.FullName);
+                    studentsIQ = studentsIQ.OrderBy(s => s.FirstMidName).ThenBy(s => s.LastName);
                     break;
                 case "first_desc":
-                    studentsIQ = studentsIQ.OrderByDescending(s => s.FullName);
+                    studentsIQ = studentsIQ.OrderByDescending(s => s.FullName).ThenByDescending(s => s.LastName);
                     break;
                 case "Date":
                     studentsIQ = studentsIQ.OrderBy(s => s.EnrollmentDate);

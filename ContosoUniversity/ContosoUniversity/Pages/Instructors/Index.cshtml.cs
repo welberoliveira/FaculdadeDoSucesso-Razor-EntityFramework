@@ -16,6 +16,7 @@ namespace ContosoUniversity.Pages.Instructors
             _context = context;
         }
 
+        public Instructor Instructor { get; set; }
         public InstructorIndexData InstructorData { get; set; }
         public int InstructorID { get; set; }
         public int CourseID { get; set; }
