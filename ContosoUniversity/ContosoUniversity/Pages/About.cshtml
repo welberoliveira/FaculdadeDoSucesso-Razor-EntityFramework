@@ -5,15 +5,15 @@
     ViewData["Title"] = "Student Body Statistics";
 }
 
-<h2>Student Body Statistics</h2>
+<h2>Relatórios</h2>
 
 <table>
     <tr>
         <th>
-            Enrollment Date
+            Data de matrícula
         </th>
-        <th>
-            Students
+        <th style="padding-left: 15px;">
+            Quantidade (alunos)
         </th>
     </tr>
 
@@ -23,7 +23,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.EnrollmentDate)
             </td>
-            <td>
+            <td style="text-align: center;">
                 @item.StudentCount
             </td>
         </tr>
