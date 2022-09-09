@@ -45,7 +45,10 @@
                     @Html.DisplayFor(modelItem => item.FullName)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                    @if (!item.Equals(null))
+                    {
+                        @item.EnrollmentDate.ToString("dd-MM-yyyy");
+                    }
                 </td>
                 <td>
                     <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.ID">Alterar</a> 

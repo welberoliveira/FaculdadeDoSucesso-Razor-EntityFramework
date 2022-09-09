@@ -27,7 +27,7 @@
             @Html.DisplayNameFor(model => model.Department.StartDate)
         </dt>
         <dd class="col-sm-8">
-            @if (Model.Department.StartDate.ToString() != "")
+            @if (!Model.Department.StartDate.Equals(null))
             {
                 @Model.Department.StartDate.ToString("dd-MM-yyyy");
             }
