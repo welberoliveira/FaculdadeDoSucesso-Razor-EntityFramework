@@ -1,36 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using ContosoUniversity.Data;
 using ContosoUniversity.Models;
+using System.Configuration;
+using ContosoUniversity.Data;
 
 namespace ContosoUniversity.Pages.Courses
 {
     public class IndexModel : PageModel
     {
-        private readonly ContosoUniversity.Data.SchoolContext _context;
+        private readonly SchoolContext _context;
+        private readonly IConfiguration Configuration;
 
-        public IndexModel(ContosoUniversity.Data.SchoolContext context)
+        public IndexModel(SchoolContext context, IConfiguration configuration)
         {
             _context = context;
+            Configuration = configuration;
         }
 
-        public IList<Course> Courses { get;set; } = default!;
+        public PaginatedList<Course> Courses { get;set; }
         public Course Course { get; set; }
-
-        public async Task OnGetAsync()
+        public List<Department> Departments { get; set; }
+        public Department Department { get; set; }
+                
+        public async Task OnGetAsync(int? pageIndex)
         {
             if (_context.Courses != null)
             {
-                Courses = await _context.Courses
+                IQueryable<Course> couseIQ = from c in _context.Courses
+                                             join d in _context.Departments on c.Department equals d
+                                             select c;
+
+                var pageSize = Configuration.GetValue("PageSize", 4);
+                Courses = await PaginatedList<Course>.CreateAsync
+                    (
+                        couseIQ.AsNoTracking(), pageIndex ?? 1, pageSize
+                    );
+
+                /*Courses = await _context.Courses
                 .Include(c => c.Department)
                 .AsNoTracking()
-                .ToListAsync();
+                .ToListAsync();*/
             }
+
         }
     }
 }

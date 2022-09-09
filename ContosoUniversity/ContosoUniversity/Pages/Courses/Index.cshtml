@@ -29,27 +29,43 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Courses) 
-{
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Credits)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Department.Name)
-            </td>
-            <td>
-                <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.CourseID">Alterar</a> 
-                <a class="btn btn-info" asp-page="./Details" asp-route-id="@item.CourseID">Detalhes</a>
-                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.CourseID">Excluir</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Courses) 
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Credits)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+                <td>
+                    <a class="btn btn-warning" asp-page="./Edit" asp-route-id="@item.CourseID">Alterar</a> 
+                    <a class="btn btn-info" asp-page="./Details" asp-route-id="@item.CourseID">Detalhes</a>
+                    <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.CourseID">Excluir</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.Courses.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Courses.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-pageIndex="@(Model.Courses.PageIndex - 1)"
+   class="btn btn-primary @prevDisabled">
+    Anterior
+</a>
+<a asp-page="./Index"
+   asp-route-pageIndex="@(Model.Courses.PageIndex + 1)"
+   class="btn btn-primary @nextDisabled">
+    Próximo
+</a>
