@@ -33,6 +33,7 @@ namespace ContosoUniversity.Models
 
         [Display(Name = "Disciplinas")]
         public ICollection<Course> Courses { get; set; }
+        [Display(Name = "Sala")]
         public OfficeAssignment OfficeAssignment { get; set; }
     }
 }
