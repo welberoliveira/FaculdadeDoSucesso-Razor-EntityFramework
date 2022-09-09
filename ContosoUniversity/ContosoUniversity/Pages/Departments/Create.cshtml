@@ -13,22 +13,24 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                Descrição
-                <input asp-for="Department.Name" class="form-control" />
+                @Html.DisplayNameFor(model => model.Department.Name)
+                @Html.TextBoxFor(model => model.Department.Name,
+                new {@class="form-control"})
                 <span asp-validation-for="Department.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Orçamento disponível
-                <input asp-for="Department.Budget" class="form-control" />
+                @Html.DisplayNameFor(model => model.Department.Budget)
+                @Html.TextBoxFor(model => model.Department.Budget,
+                new {@class="form-control"})
                 <span asp-validation-for="Department.Budget" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Data de início
+                @Html.DisplayNameFor(model => model.Department.StartDate)
                 <input asp-for="Department.StartDate" class="form-control" />
                 <span asp-validation-for="Department.StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                Coordenador
+                @Html.DisplayNameFor(model => model.Department.InstructorID)
                 <select asp-for="Department.InstructorID" class ="form-control" asp-items="ViewBag.InstructorID"></select>
             </div>
             <div class="form-group mt-2">

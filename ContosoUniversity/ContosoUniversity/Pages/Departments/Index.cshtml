@@ -14,22 +14,22 @@
     <thead>
         <tr>
             <th>
-                Descrição
+                @Html.DisplayNameFor(model => model.Department.Name)
             </th>
             <th>
-                Orçamento Disponível
+                @Html.DisplayNameFor(model => model.Department.Budget)
             </th>
             <th>
-                Data de Início
+                @Html.DisplayNameFor(model => model.Department.StartDate)
             </th>
             <th>
-                Coordenador
+                @Html.DisplayNameFor(model => model.Department.Administrator)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Department)
+        @foreach (var item in Model.Departments)
         {
             <tr>
                 <td alt="Token: @Utility.GetLastChars(item.ConcurrencyToken)">
@@ -39,7 +39,10 @@
                     @Html.DisplayFor(modelItem => item.Budget)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.StartDate)
+                    @if (!item.StartDate.Equals(null))
+                    {
+                        @item.StartDate.ToString("dd-MM-yyyy");
+                    }
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Administrator.FullName)

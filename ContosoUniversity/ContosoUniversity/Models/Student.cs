@@ -11,21 +11,21 @@ namespace ContosoUniversity.Models
         
         [Required]
         [StringLength(50)]
-        [Display(Name = "Last Name")]
+        [Display(Name = "Sobrenome")]
         public string LastName { get; set; }
         
         [Required]
         [StringLength(50, ErrorMessage = "First name cannot be longer than 50 characters.")]
         [Column("FirstName")]
-        [Display(Name = "First Name")]
+        [Display(Name = "Nome")]
         public string FirstMidName { get; set; }
         
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        [Display(Name = "Enrollment Date")]
+        [Display(Name = "Data de matrícula")]
         public DateTime EnrollmentDate { get; set; }
 
-        [Display(Name = "Full Name")]
+        [Display(Name = "Nome completo")]
         public string FullName
         {
             get
@@ -34,6 +34,7 @@ namespace ContosoUniversity.Models
             }
         }
 
+        [Display(Name = "Disciplinas matriculadas")]
         public ICollection<Enrollment> Enrollments { get; set; }
     }
 }

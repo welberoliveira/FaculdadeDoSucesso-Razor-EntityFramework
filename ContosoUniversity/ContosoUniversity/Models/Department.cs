@@ -20,8 +20,9 @@ namespace ContosoUniversity.Models
 
         [DataType(DataType.Currency)]
         [Column(TypeName = "money")]
-        [DisplayFormat(DataFormatString = "{0:C0}")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
         [Display(Name = "Orçamento Disponível (R$)")]
+        [Required(ErrorMessage = "O valor para o Orçamento está incorreto.")]
         public decimal Budget { get; set; }
 
         [DataType(DataType.Date)]
@@ -30,6 +31,7 @@ namespace ContosoUniversity.Models
         [Display(Name = "Data de Início")]
         public DateTime StartDate { get; set; }
 
+        [Display(Name = "Cordenador")]
         public int? InstructorID { get; set; }
 
         [Timestamp]

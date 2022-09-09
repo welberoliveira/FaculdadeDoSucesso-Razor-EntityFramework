@@ -8,9 +8,10 @@ namespace ContosoUniversity.Models
         [Key]
         public int InstructorID { get; set; }
         [StringLength(50)]
-        [Display(Name = "Office Location")]
+        [Display(Name = "Sala")]
         public string Location { get; set; }
 
+        [Display(Name = "Professor")]
         public Instructor Instructor { get; set; }
     }
 }
