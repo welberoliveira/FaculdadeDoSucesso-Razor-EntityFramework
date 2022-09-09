@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using ContosoUniversity.Models;
 using System.Configuration;
 using ContosoUniversity.Data;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.View;
 
 namespace ContosoUniversity.Pages.Courses
 {
@@ -27,7 +28,13 @@ namespace ContosoUniversity.Pages.Courses
             if (_context.Courses != null)
             {
                 IQueryable<Course> couseIQ = from c in _context.Courses
-                                             select c;
+                                             join d in _context.Departments on c.Department equals d
+                                             select new Course {
+                                                 CourseID = c.CourseID,
+                                                 Title = c.Title,
+                                                 Credits = c.Credits,
+                                                 Department = d
+                                             };
 
                 var pageSize = Configuration.GetValue("PageSize", 4);
                 Courses = await PaginatedList<Course>.CreateAsync
@@ -35,11 +42,6 @@ namespace ContosoUniversity.Pages.Courses
                         couseIQ.AsNoTracking(), pageIndex ?? 1, pageSize
                     );
             }
-        }
-        public String CourseDepartmentName(int DepartmentID)
-        {
-            PopulateDepartmentField(_context, DepartmentID);
-            return DepartmentNameField;
         }
     }
 }
