@@ -6,7 +6,7 @@ using ContosoUniversity.Data;
 
 namespace ContosoUniversity.Pages.Courses
 {
-    public class IndexModel : PageModel
+    public class IndexModel : DepartmentNamePageModel
     {
         private readonly SchoolContext _context;
         private readonly IConfiguration Configuration;
@@ -27,7 +27,6 @@ namespace ContosoUniversity.Pages.Courses
             if (_context.Courses != null)
             {
                 IQueryable<Course> couseIQ = from c in _context.Courses
-                                             join d in _context.Departments on c.Department equals d
                                              select c;
 
                 var pageSize = Configuration.GetValue("PageSize", 4);
@@ -35,13 +34,12 @@ namespace ContosoUniversity.Pages.Courses
                     (
                         couseIQ.AsNoTracking(), pageIndex ?? 1, pageSize
                     );
-
-                /*Courses = await _context.Courses
-                .Include(c => c.Department)
-                .AsNoTracking()
-                .ToListAsync();*/
             }
-
+        }
+        public String CourseDepartmentName(int DepartmentID)
+        {
+            PopulateDepartmentField(_context, DepartmentID);
+            return DepartmentNameField;
         }
     }
 }
