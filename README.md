@@ -32,8 +32,27 @@ Diagrama de Entidade-Relacionamentos
 
 ![image](https://user-images.githubusercontent.com/9114023/188274400-b1a65d7b-4fb9-43f2-85fd-6a0380872dfe.png)
 
-[TO DO]
-Incluir telas do sistema
+Telas do Sistema:
+
+Tela Inicial
+![image](https://user-images.githubusercontent.com/9114023/189487719-1ada7225-e783-4f18-8666-3208d1d0fc3f.png)
+
+Tela de Apresentação de Alunos
+![image](https://user-images.githubusercontent.com/9114023/189487737-3b2ce971-f7c8-49a6-9fc0-80f7ac1a40f5.png)
+
+Tela de Apresentação de Disciplinas
+![image](https://user-images.githubusercontent.com/9114023/189488061-b41c278e-c651-4403-aa29-61720f311485.png)
+
+Tela de Apresentação de Cursos
+![image](https://user-images.githubusercontent.com/9114023/189488106-1b113e7a-9d24-4b19-9d73-1e8ffc7b72b9.png)
+
+Tela de Apresentação de Professores
+![image](https://user-images.githubusercontent.com/9114023/189488127-207bdab4-8dcf-4594-a1e7-6f13604b102d.png)
+
+Tela de Vinculo entre Professores e Disciplinas
+![image](https://user-images.githubusercontent.com/9114023/189488149-e27adbc9-b513-4da6-b4cc-49e217806725.png)
+
+
 
 Referências:
 https://docs.microsoft.com/en-us/aspnet/core/data/ef-rp/concurrency?view=aspnetcore-6.0&tabs=visual-studio
