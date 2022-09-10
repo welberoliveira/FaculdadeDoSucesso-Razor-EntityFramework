@@ -58,10 +58,10 @@ Tela de Vinculo entre Professores e Disciplinas
 
 
 Referências:
-https://docs.microsoft.com/en-us/ef/core/miscellaneous/async
-https://docs.microsoft.com/en-us/ef/core/cli/
-https://docs.microsoft.com/en-us/ef/core/providers/sql-server/?tabs=dotnet-core-cli
-https://docs.microsoft.com/en-us/aspnet/core/data/ef-rp/concurrency?view=aspnetcore-6.0&tabs=visual-studio
-https://getbootstrap.com/docs/4.4/components/media-object/
-https://docs.microsoft.com/en-us/ef/core/logging-events-diagnostics/diagnostic-listeners
+ - https://docs.microsoft.com/en-us/ef/core/miscellaneous/async
+ - https://docs.microsoft.com/en-us/ef/core/cli/
+ - https://docs.microsoft.com/en-us/ef/core/providers/sql-server/?tabs=dotnet-core-cli
+ - https://docs.microsoft.com/en-us/aspnet/core/data/ef-rp/concurrency?view=aspnetcore-6.0&tabs=visual-studio
+ - https://getbootstrap.com/docs/4.4/components/media-object/
+ - https://docs.microsoft.com/en-us/ef/core/logging-events-diagnostics/diagnostic-listeners
 
