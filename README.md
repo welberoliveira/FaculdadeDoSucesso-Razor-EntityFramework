@@ -3,7 +3,7 @@
 Faculdade do Sucesso é um sistema criado usando Entity Framework Core em ASP.NET Core Razor Pages Web App e que tem como referência instruções e modelos do site da Microsoft. Foi utilizado o Sistema Gerenciador de Bancos de Dados Sql Server. Ambos: aplicação e banco de dados estão hospedados na Azure.
 
 Publicado na Azure:
-https://contosouniversity20220830201003.azurewebsites.net
+https://faculdadedosucesso.azurewebsites.net/
 
 Dentre as funções há:
  - Cadastro de Alunos com CRUD
