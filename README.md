@@ -6,18 +6,19 @@ Publicado na Azure:
 https://faculdadedosucesso.azurewebsites.net/
 
 Dentre as funções há:
- - Cadastro de Alunos com CRUD
- - Cadastro de Professores com CRUD
- - Cadastro de Cursos com CRUD
- - Cadastro de Disciplinas com CRUD
- - Função de de busca por nomes
- - Função de paginação
- - Relatórios dos cadastros realizados
- - Geração de CRUD por Scaffold
- - Controle de Simultaneidade nas alterações e Deleções
- - Comunicação de dados Assincrona
- - Banco de Dados relacional: SQL Server
- - Layout responsivo e adaptado para celular e outros dispositivos móveis
+ - Cadastro de Alunos com CRUD;
+ - Cadastro de Professores com CRUD;
+ - Cadastro de Cursos com CRUD;
+ - Cadastro de Disciplinas com CRUD;
+ - Função de de busca por nomes;
+ - Função de paginação;
+ - Relatórios dos cadastros realizados;
+ - Geração de CRUD por Scaffold;
+ - Controle de Simultaneidade nas alterações e Deleções;
+ - Comunicação de dados Assincrona;
+ - Banco de Dados relacional: SQL Server;
+ - Layout responsivo e adaptado para celular e outros dispositivos móveis;
+ - Todos os dados apresentados são aleatórios e fictícios.
 
 Modelos criados:
 
